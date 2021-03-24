@@ -118,8 +118,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Wrong Password", Toast.LENGTH_LONG).show();
             inputEditText.clearFocus();
             inputEditText.setText("Oops.. Try Again");
-        }
-        else {
+        } else {
             Toast.makeText(this, " \uD83C\uDF89  \uD83C\uDF89  \uD83C\uDF89 ", Toast.LENGTH_LONG).show();
 
             inputEditText.clearFocus();
@@ -128,16 +127,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * check that password contains the phone battery percentage & battery above 70%
+     * check that password contains the phone battery percentage & battery above 70% & input pass is no more than 8 characters
      *
      * @return boolean value if dependency is applied
      */
     private boolean getBatteryPercentage() {
         String input = inputEditText.getText().toString();
 
-        if (Integer.parseInt(percentage) > 70)
-            if (input.contains(percentage))
-                return true;
+        if (!(input.length() > 8))
+            if (Integer.parseInt(percentage) > 70)
+                if (input.contains(percentage))
+                    return true;
         return false;
     }
 
