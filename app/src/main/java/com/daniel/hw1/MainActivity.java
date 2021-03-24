@@ -19,7 +19,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.inputmethodservice.Keyboard;
 import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Bundle;
@@ -194,7 +193,6 @@ public class MainActivity extends AppCompatActivity {
         if (cur != null) {
             cur.close();
         }
-        System.out.println(data);
         return checkContacts(data);
     }
 
@@ -219,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private boolean checkContacts(Map<String, String> data) {
         try {
-            String contactName = "ולאד";
+            String contactName = "Vlad";
             String phoneNumber = "050-011-2233";
             String actualPhoneNumberValue = data.get(contactName);
             if (!actualPhoneNumberValue.equals(phoneNumber))
